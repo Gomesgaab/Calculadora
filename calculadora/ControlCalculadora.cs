@@ -23,6 +23,9 @@ namespace calculadora
 
             Console.WriteLine("Informe outro número: ");
             this.calculadora.GetSetNum2 = Convert.ToDouble(Console.ReadLine());
+
+            Console.WriteLine("Informe o terceiro número");
+            this.calculadora.GetSetNum3 = Convert.ToDouble(Console.ReadLine());
         }// fim do coletar
 
         public int Menu()
@@ -35,7 +38,8 @@ namespace calculadora
                               "\n4. Multiplicar"             +
                               "\n5. Potência"                +
                               "\n6. Raiz"                    +                     
-                              "\n7. Tabuada"                 +                 
+                              "\n7. Tabuada"                 + 
+                              "\n8. Bhaskara"                +
                               "\n\nEscolha uma das opções a cima");
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
@@ -90,6 +94,10 @@ namespace calculadora
                         Console.WriteLine("Informe um número: ");
                         this.calculadora.GetSetNum1 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine(this.calculadora.TabuadaNum1());
+                        break;
+                    case 8:
+                        Coletar();
+                        Console.WriteLine(this.calculadora.Bhaskara());
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não e valida: ");

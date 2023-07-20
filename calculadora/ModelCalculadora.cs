@@ -6,31 +6,38 @@ using System.Threading.Tasks;
 
 namespace calculadora
 {
-     class ModelCalculadora
+    class ModelCalculadora
     {
         //declarndo variavel 
         private double num1;
         private double num2;
-
-        public ModelCalculadora() 
+        private double num3;
+        public ModelCalculadora()
         {
             GetSetNum1 = 0;
             GetSetNum2 = 0;
+            GetSetNum1 = 0;
 
         }// fim do construtor
 
         // métodos get set 
         public double GetSetNum1
         {
-            get { return this.num1; } 
-            set { this .num1 = value;}
+            get { return this.num1; }
+            set { this.num1 = value; }
         } // fi do get set num1
 
         public double GetSetNum2
         {
             get { return this.num2; }
-            set { this .num2 = value;}
+            set { this.num2 = value; }
         }// fim get set num2
+
+        public double GetSetNum3
+        {
+            get { return this.num3; }
+            set { this.num3 = value; }
+        }
 
         //Métodos 
         public double Somar()
@@ -99,7 +106,11 @@ namespace calculadora
             return resultado;
         }//fim tabuadaNum2
 
+        public double Bhaskara()
+        {
+            return ( -GetSetNum2 + Math.Sqrt(Math.Pow(GetSetNum2,2) - (4 * GetSetNum1 + GetSetNum3))) / 2 * GetSetNum1;
 
+        }// fim bhask
 
 
 
