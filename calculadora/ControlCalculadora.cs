@@ -48,6 +48,9 @@ namespace calculadora
                               "\n14. Dobro é Triplo"                      +
                               "\n15. Retorno de porcentagem do salário: " +
                               "\n16. Par ou Impar:"                       +
+                              "\n17. Soma de inteiros"                    +
+                              "\n18. Tabuada sua escolha"                 +
+                              "\n19. Sequencia"                           +
                               "\n\nEscolha uma das opções acima: ");
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
@@ -147,6 +150,23 @@ namespace calculadora
                         Console.WriteLine("Informe um valor: ");
                         this.calculadora.GetSetNum1 = Convert.ToDouble(Console.ReadLine());
                         Console.WriteLine("\n" + this.calculadora.ParouInpar());
+                        break;
+                    case 17:                      
+                        Console.WriteLine("\nA soma dos inteiros de 1 a 100 é: " + this.calculadora.SomaInteiro());
+                        break;
+                    case 18:
+                        Console.WriteLine("Informe um valor: ");
+                        int num1 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe outro valor: ");
+                        int num2 = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n" + this.calculadora.TabuadaEscolha(num1,num2));
+                        break;
+                    case 19:
+                        Console.WriteLine("Informe um valor: ");
+                        int numI = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe outro valor: ");
+                        int numF = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("\n" + this.calculadora.Sequencia(numI, numF));
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não e valida: ");

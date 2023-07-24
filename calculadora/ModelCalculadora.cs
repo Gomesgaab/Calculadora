@@ -257,19 +257,53 @@ namespace calculadora
 
         public string ParouInpar() 
         {
-
             if (GetSetNum1 % 2 == 0)
             {
                 return "O núumero citado e par";
-
             }
             else
             {
                 return "O número citado e impar";
-
             }// fim 
-
         }// fim do par ou impar
 
-    }
+        public int SomaInteiro()
+        {
+            int resultado = 0;
+            for(int i = 0; i <= 100; i++)
+            {
+                resultado = resultado + i;
+
+            }//fim
+            return resultado;        
+        }// fim somar númeiros inteiros 
+
+        public string TabuadaEscolha(int num1, int num2)
+        {
+            string resultado = "";
+
+            for (int i = 0; i <= num1; i++)
+            {
+                resultado += "\n" + num2 + " * " + i + " = " + (num2 * i);
+            }// fim for
+
+            return resultado;
+        }//fim tabuada você escolhe 
+
+        public string Sequencia(int numI, int numF)
+        {
+            double i;
+            i = 0;
+            string resultado = "";
+            for (i = numI; i <= numF; i++)
+            {
+                resultado += "\n" + i;
+
+            }//fim
+            return resultado;
+        }// fim somar númeiros inteiros 
+
+
+
+    }// fim da classe 
 }// fim do projeto 
