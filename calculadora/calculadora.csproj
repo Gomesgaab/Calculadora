@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="ControlCalculadora.cs" />
     <Compile Include="ModelCalculadora.cs" />
+    <Compile Include="ModelCalculadoraHelpers.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
