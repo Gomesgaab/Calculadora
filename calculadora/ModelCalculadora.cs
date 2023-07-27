@@ -303,6 +303,149 @@ namespace calculadora
             return resultado;
         }// fim somar númeiros inteiros 
 
+        public string CemDuzentos()
+        {
+            string msg = "";
+
+            for (int i = 100; i <= 200; i++)
+            {
+                if (i % 2 != 0)
+                {
+                   msg += "\n" + i;
+                }// fim
+               
+            }// fim
+            return msg;
+        }// fim Cem a Duzentos 
+
+
+        public int SomaDezInteiros()
+        {
+            int numA = 0;
+            int num  = 0;
+                
+            for (int i = 0; i <= 9; i++)
+            {
+                
+                Console.WriteLine("Informe um número inteiro: ");
+                num = Convert.ToInt32(Console.ReadLine());
+                numA += num;
+                num = 0;
+            }
+            return numA;
+        }// fim somar 10 inteiros 
+
+        public int Atezero()
+        {
+            int num = 0;
+            int numA = 0;
+            do
+            {
+                Console.WriteLine("Informe um número inteiro: ");
+                num = Convert.ToInt32(Console.ReadLine());
+                numA += num;
+            }while (num != 0);
+            return numA;
+        }// fim ate zero 
+
+        public double Media()
+        {
+            double num = 0;
+            double cont = 0;
+            double numA = 0;
+            do
+            {
+                Console.WriteLine("Informe um número: ");
+                num = Convert.ToInt32(Console.ReadLine());
+              
+                if (num % 2 == 0)
+                {
+                    cont += 1;
+                    numA += num;
+
+                }// fim do se     
+           
+            } while (num != 0);
+            
+            return (numA / (cont -1));
+        }// fim da Média 
+
+        public string MaiorMenor()
+        {
+            int numB = 0;
+            Boolean flag = false;
+            int maior = 0;
+            int menor = 0;
+            string msg = "";
+
+            do
+            {
+                Console.WriteLine("Informe um número: ");
+                numB = Convert.ToInt32(Console.ReadLine());
+
+                if(flag == false)
+                {
+                     maior = numB;
+                     menor = numB;
+                     flag = true;
+                }
+
+                if (numB != 0)
+                {
+                    if(numB > maior)
+                    {
+                        maior = numB;
+                    }
+
+                    if(numB < menor)
+                    {
+                        menor = numB;
+                    }
+                }
+                msg = "O maior número é:" + maior + " O menor número é:" + menor;
+            } while (numB != 0);
+
+            return msg;
+        }// fim da Média
+        
+        public string SomaQuantidade()
+        {
+            int numeracao = 0;
+            int cont = 0;
+            int negativo = 0;
+            string msg = "";
+
+            for (int i = 0; i <= 19; i++)
+            {
+                Console.WriteLine("Informe um número: ");
+                numeracao = Convert.ToInt32(Console.ReadLine());
+
+                if (numeracao >= 0)
+                {
+                    cont += numeracao;
+                }
+                if (numeracao < 0)
+                {
+                    negativo += 1;
+                }
+                msg = "A soma dos números positivos são: " + cont + " A quantidade de números negativos são: " + negativo;
+            }
+            return msg;
+        }// fim soma quantidade
+
+        public string Fatorial(int num)
+        {
+            num = 0;
+            int cont = 0;
+            int pote = tamanho;
+            for (int i = 0; i <= num; i++)
+            {
+                cont += num -1;
+                num = num * cont;
+            }
+            return "O fatorial do número informado é: " + num;
+        }// fim fatorial
+
 
 
     }// fim da classe 

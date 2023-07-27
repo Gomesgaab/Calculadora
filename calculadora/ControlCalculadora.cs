@@ -30,7 +30,7 @@ namespace calculadora
 
         public int Menu()
         {
-            Console.WriteLine("-----Menu-----"                            +
+            Console.WriteLine("\n" + "-----Menu-----"                     +
                               "\n0.  Sair"                                + 
                               "\n1.  Somar"                               +
                               "\n2.  Subtrair"                            +
@@ -51,6 +51,13 @@ namespace calculadora
                               "\n17. Soma de inteiros"                    +
                               "\n18. Tabuada sua escolha"                 +
                               "\n19. Sequencia"                           +
+                              "\n20. Impares de 100 a 200"                +
+                              "\n21. Soma dos Dez Inteiros"               +
+                              "\n22. Ate zero"                            +
+                              "\n23. Média"                               +
+                              "\n24. Maior Menor"                         +
+                              "\n25. Soma Quantidade"                     +
+                              "\n26. Fatorial"                            +
                               "\n\nEscolha uma das opções acima: ");
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
@@ -167,6 +174,29 @@ namespace calculadora
                         Console.WriteLine("Informe outro valor: ");
                         int numF = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("\n" + this.calculadora.Sequencia(numI, numF));
+                        break;
+                    case 20:
+                        Console.WriteLine("Os números impares de 100 a 200 são: " + this.calculadora.CemDuzentos());
+                        break;
+                    case 21:
+                        Console.WriteLine("\nA soma dos números inteiros infomados são:" + "\n" + this.calculadora.SomaDezInteiros());
+                        break;
+                    case 22:
+                        Console.Write("\n" + this.calculadora.Atezero());
+                        break;
+                    case 23:
+                        Console.Write("\n" + this.calculadora.Media());
+                        break;
+                    case 24:
+                        Console.WriteLine("\n" + this.calculadora.MaiorMenor());
+                        break;
+                    case 25:
+                        Console.WriteLine("\n" + this.calculadora.SomaQuantidade());
+                        break;
+                    case 26:
+                        Console.WriteLine("Informe um valor");
+                        int num = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.Fatorial(num));
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não e valida: ");
