@@ -58,7 +58,15 @@ namespace calculadora
                               "\n24. Maior Menor"                         +
                               "\n25. Soma Quantidade"                     +
                               "\n26. Fatorial"                            +
+                              "\n27. Jogadores(as)"                       +
+                              "\n28. Nota das competidoras"               +
+                              "\n29. Eleitores"                           +
+                              "\n30. Custo Carro"                         +
+                              "\n31. Idade Ano Mês Dias"                  +
+                              "\n32. Vetor"                               +
+                              "\n33. Vetor 2"                             + 
                               "\n\nEscolha uma das opções acima: ");
+
             int opcao = Convert.ToInt32(Console.ReadLine());
             return opcao;
         }// fim do método menu
@@ -197,6 +205,50 @@ namespace calculadora
                         Console.WriteLine("Informe um valor");
                         int num = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(this.calculadora.Fatorial(num));
+                        break;
+                    case 27:
+                        Console.WriteLine("Informe o número de jogadores(as)");
+                        int numJ = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.Jogadores(numJ));
+                        break;
+                    case 28:
+                        Console.WriteLine(this.calculadora.NotasCompetidoras());
+                        break;
+                    case 29:
+                        Console.WriteLine("Informe o total de eleitores");
+                        double tEleitores = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informa a quantidade de votos nulos:");
+                        double nulos = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informe a quantidade de votos brancos:");
+                        double brancos = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine("Informe a quantidade de votos validos");
+                        double valido = Convert.ToDouble(Console.ReadLine());
+
+                        Console.WriteLine(this.calculadora.Eleitores(valido,nulos,brancos,tEleitores));
+                        break;
+                    case 30:
+                        Console.WriteLine("Informe o custo de fabrica");
+                        int cFabrica = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(this.calculadora.CustoCarro(cFabrica));
+                        break;
+                    case 31:
+                        Console.WriteLine("Informe quantos anos voê tem");
+                        int anos = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe quantos dias você tem");
+                        int dias = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Informe quantos meses voê tem");
+                        int meses = Convert.ToInt32(Console.ReadLine());
+
+                        Console.WriteLine(this.calculadora.IddAnoMeses(anos, meses, dias));
+                        break;
+                    case 32:
+                        Console.WriteLine(this.calculadora.Vetor());
+                        break;
+                    case 33:
+                        Console.WriteLine(this.calculadora.Vetor2());
                         break;
                     default:
                         Console.WriteLine("Opção escolhida não e valida: ");

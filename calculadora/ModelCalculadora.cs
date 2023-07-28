@@ -239,10 +239,10 @@ namespace calculadora
 
         public string DobroTriplo()
         {
-            string msg = "O dobro é: " + GetSetNum1  * 2 +
+            string msg = "O dobro é: " + GetSetNum1 * 2 +
                          "\nO triplo é: " + GetSetNum1 * 3;
             return msg;
-            
+
         }// fim dobrotriplo 
 
         public double Retorno()
@@ -255,7 +255,7 @@ namespace calculadora
             return total;
         }// fim retorno porcentagem 
 
-        public string ParouInpar() 
+        public string ParouInpar()
         {
             if (GetSetNum1 % 2 == 0)
             {
@@ -270,12 +270,12 @@ namespace calculadora
         public int SomaInteiro()
         {
             int resultado = 0;
-            for(int i = 0; i <= 100; i++)
+            for (int i = 0; i <= 100; i++)
             {
                 resultado = resultado + i;
 
             }//fim
-            return resultado;        
+            return resultado;
         }// fim somar númeiros inteiros 
 
         public string TabuadaEscolha(int num1, int num2)
@@ -311,9 +311,9 @@ namespace calculadora
             {
                 if (i % 2 != 0)
                 {
-                   msg += "\n" + i;
+                    msg += "\n" + i;
                 }// fim
-               
+
             }// fim
             return msg;
         }// fim Cem a Duzentos 
@@ -322,11 +322,11 @@ namespace calculadora
         public int SomaDezInteiros()
         {
             int numA = 0;
-            int num  = 0;
-                
+            int num = 0;
+
             for (int i = 0; i <= 9; i++)
             {
-                
+
                 Console.WriteLine("Informe um número inteiro: ");
                 num = Convert.ToInt32(Console.ReadLine());
                 numA += num;
@@ -344,7 +344,7 @@ namespace calculadora
                 Console.WriteLine("Informe um número inteiro: ");
                 num = Convert.ToInt32(Console.ReadLine());
                 numA += num;
-            }while (num != 0);
+            } while (num != 0);
             return numA;
         }// fim ate zero 
 
@@ -357,17 +357,17 @@ namespace calculadora
             {
                 Console.WriteLine("Informe um número: ");
                 num = Convert.ToInt32(Console.ReadLine());
-              
+
                 if (num % 2 == 0)
                 {
                     cont += 1;
                     numA += num;
 
                 }// fim do se     
-           
+
             } while (num != 0);
-            
-            return (numA / (cont -1));
+
+            return (numA / (cont - 1));
         }// fim da Média 
 
         public string MaiorMenor()
@@ -383,21 +383,21 @@ namespace calculadora
                 Console.WriteLine("Informe um número: ");
                 numB = Convert.ToInt32(Console.ReadLine());
 
-                if(flag == false)
+                if (flag == false)
                 {
-                     maior = numB;
-                     menor = numB;
-                     flag = true;
+                    maior = numB;
+                    menor = numB;
+                    flag = true;
                 }
 
                 if (numB != 0)
                 {
-                    if(numB > maior)
+                    if (numB > maior)
                     {
                         maior = numB;
                     }
 
-                    if(numB < menor)
+                    if (numB < menor)
                     {
                         menor = numB;
                     }
@@ -407,7 +407,7 @@ namespace calculadora
 
             return msg;
         }// fim da Média
-        
+
         public string SomaQuantidade()
         {
             int numeracao = 0;
@@ -433,18 +433,143 @@ namespace calculadora
             return msg;
         }// fim soma quantidade
 
-        public string Fatorial(int num)
+        public int Fatorial(int num)
         {
-            num = 0;
-            int cont = 0;
-            int pote = tamanho;
-            for (int i = 0; i <= num; i++)
+            int numA = 1;
+            for (int i = 1; i <= num; i++)
             {
-                cont += num -1;
-                num = num * cont;
+                numA *= i;
             }
-            return "O fatorial do número informado é: " + num;
+            return numA;
         }// fim fatorial
+
+        public string Jogadores(int numJ)
+        {
+            double altura = 0;
+            double cont = 0;
+            double media = 0;
+
+            for (int i = 1; i <= numJ; i++)
+            {
+                Console.WriteLine("Informe a altura dos jogadores: ");
+                altura = Convert.ToDouble(Console.ReadLine());
+                cont += altura;
+            }// fim
+            media = cont / numJ;
+            return "\nA média de altura dos jogadores é:" + "" + media;
+        }// fim média de jogadores
+
+        public string NotasCompetidoras()
+        {
+            string nome = "";
+            int nota = 0;
+            Boolean flag = false;
+            int maiorN = 0;
+            string nomeMss = "";
+
+            for (int i = 1; i <= 2; i++)
+            {
+                Console.WriteLine("Informe o nome das competidoras: " + i + "º");
+                nome = Console.ReadLine();
+                Console.WriteLine("Informe a nota dos jogadores: ");
+                nota = Convert.ToInt32(Console.ReadLine());
+                if (nota < 0 || nota > 10)
+                {
+                    Console.WriteLine("Informe notas validas de 0 a 10: ");
+                    nota = 0;
+                    i = i - 1;
+                }
+                if (flag == false)
+                {
+                    maiorN = nota;
+                    nomeMss = nome;
+                    flag = true;
+                }
+                if (nota > maiorN)
+                {
+                    maiorN = nota;
+                    nomeMss = nome;
+                }// fim if
+            }// fim for
+
+            return "\nA competidora vencedora é: " + nomeMss + " Com a Nota de: " + maiorN;
+        }// fim Miss
+
+        public string Eleitores(double brancos, double nulos, double valido, double tEleitores)
+        {
+            string msg = "";
+
+            double tv = valido / tEleitores * 100;
+            double tn = nulos / tEleitores * 100;
+            double tb = brancos / tEleitores * 100;
+
+            msg = ("\nPercentual de votos brancos: " + tb + "%" + "\nPercentual votos validos: " + tv + "%" + "\nPercentual votos nulos: " + tn + "%");
+            return msg;
+
+        }// fim eleitores
+
+        public double CustoCarro(int cFabrica)
+        {
+            double fConsumidor = 0;
+
+            fConsumidor = ((cFabrica  * 0.28 ) + cFabrica) + ((cFabrica * 0.45) + cFabrica);
+
+            return fConsumidor;
+        }// fim 
+
+        public int IddAnoMeses(int anos, int meses, int dias)
+        {
+            int idade = 0;
+
+            idade = ((anos * 365) + (meses * 30) + (dias));
+            return idade;
+        }// fim 
+
+        public string Vetor()
+        {
+            double maior = 0;
+
+            double[] notas = new double[5];
+            for(int i = 0;i <= 4;i++)
+            {
+                Console.WriteLine(i + 1 + "ª nota");
+                notas[i] = Convert.ToDouble(Console.ReadLine());
+                if (notas[i] > maior)
+                {
+                    maior = notas[i];
+                }
+            }
+            return "\nA maior nota é: " + maior;
+        }// fim vetor
+
+        public string Vetor2()
+        {
+            int msgA = 0;
+            int msgB = 0;
+            int y = 0;
+            int i = 0;
+
+                int[] valores = new int[5];
+            for( i =0; i <= 4; i++)
+            {
+                Console.WriteLine(i + 1 + "°");
+                valores[i] = Convert.ToInt32(Console.ReadLine());
+                if (valores[i] % 2 != 0)
+                {
+                    int[] valoresN = new int[5];
+                    for ( y = 0; y <= 4; y++)
+                    {
+                    }
+                    msgA = valoresN[y] = valores[i];
+                }
+                if (valores[i] % 2 == 0)
+                {
+                   msgB = valores[i] = valores[i];
+                }
+            }
+            return "Valores pares é: " + msgA + " Valores impares é: " + msgB;
+        }
+
 
 
 

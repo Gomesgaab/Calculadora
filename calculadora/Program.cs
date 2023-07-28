@@ -12,6 +12,7 @@ namespace calculadora
         {
             ControlCalculadora control = new ControlCalculadora();
             control.Operacao();
+            Console.WriteLine();
         }//fim do metodo main
     }// fim da classe program
 }//fim do projeto calculador\
